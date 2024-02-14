@@ -1,0 +1,279 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'freight big pro'; 
+}
+
+html,body{
+    height: 100%;
+    width:100%;
+}
+
+main{
+    background-color: #000;
+}
+
+#loader{
+    height: 100vh;
+    width:100%;
+    background-color: black;
+    position: fixed;
+    z-index:99;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* display: none; */
+}
+
+#loader h1{
+    font-size: 6.6vw;
+    line-height: 4.8vw;
+    font-weight: 200;
+    position: relative;
+    z-index:9;
+    letter-spacing: 0.001vw;
+    word-spacing: 0.1px;
+}
+
+#loader video{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 6;
+}
+
+#yellow1{
+    height: 100%;
+    width: 100%;
+    background-color: yellow;
+    position: absolute;
+    z-index: 8;
+}
+
+#yellow2{
+    height: 100%;
+    width: 100%;
+    background-color: yellow;
+    position: absolute;
+    z-index: 7;
+}
+
+#nav{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    padding: 30px 50px;
+}
+
+#nav svg path{
+    fill:#000;
+}
+#page1{
+    height: 100vh;
+    width:100%;
+    background-color: rgb(245,228,27);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#page1 h1{
+    font-size: 6.6vw;
+    line-height: 4.8vw;
+    font-weight: 200;
+    letter-spacing: 0.001vw;
+    word-spacing: 0.1px;
+}
+
+#page2{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.elem{
+    /* background-color: red; */
+    position: relative;
+    width: 100%;
+   
+    cursor: pointer;
+}
+
+.elem h2{
+    font-size: 7.5vw;
+    text-transform: uppercase;
+    position: relative;
+    line-height: 5.5vw;
+    z-index: 9;
+    font-weight: 100;
+}
+
+.elem .moving{
+    background-color: rgb(245,228,27);
+    white-space: nowrap;
+    position: absolute;
+    top:50%;
+    overflow: hidden;
+    transform: translate(0,-45%) scaleY(0);
+    transition: all ease 0.3s;
+    padding: 7px 0;
+    
+}
+
+.elem .blur{
+    position: absolute;
+    width: 20%;
+    left: 21%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+    background:linear-gradient(to right,rgb(245,228,27),rgb(245,228,27),rgb(245,228,27));
+    box-shadow: 10px 0 10px 20px rgb(245,228,27),-10px 0 10px 20px rgb(245,228,27);
+    z-index: 8;
+}
+
+.elem .moving .moving-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: moving;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}
+
+.elem .moving .moving-in h5{
+    color: #000;
+    display: inline-block;
+    font-size: 17px;
+    transition-delay: 0.2s;
+    transition: all ease 0.3s;
+    opacity: 0;
+    font-weight: 500;
+    font-family: gilroy;
+    text-transform: uppercase;
+    margin-right: 35px;
+}
+
+.elem:hover .moving{
+    transform: translate(0,-45%) scaleY(1);
+}
+
+.elem:hover .moving h5{
+   opacity: 1;
+}
+
+.elem:hover h2{
+    font-style: italic;
+ }
+
+ @keyframes moving{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+
+
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: white;
+}
+
+.image-container{
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.image-div{
+    position: relative;
+   height:40vw;
+   width:28vw;
+   overflow: hidden;
+   margin:16px;
+}
+
+.image-div .overlay{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    background-color: #00000039; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 20px; 
+    z-index: 9;
+    transition: all ease 0.5s;
+}
+
+.image-div .overlay p{
+    font-size:3vw;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    line-height: 2.4vw;
+    transition: all ease 0.5s;
+    opacity: 0;
+}
+
+.image-div img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+}
+
+.image-div:hover img{
+    scale:1.2;
+}
+.image-div:hover .overlay{
+    background-color: #000;
+}
+.image-div:hover .overlay p{
+    opacity: 1;
+}
+
+.footer{
+    height: 40vh;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.footer h2{
+ font-family: gilroy;
+ text-transform: uppercase;
+ cursor:pointer;
+}
+
+.footer #foot{
+    height: 50%;
+    width: 100%;
+    background-color: #000;
+}
+
+
+
+
