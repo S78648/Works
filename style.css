@@ -195,21 +195,23 @@ main{
     min-height: 100vh;
     width: 100%;
     background-color: white;
+    display: flex;
 }
 
 .image-container{
-    padding: 20px;
+    padding: 0 5px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .image-div{
-    position: relative;
+   position: relative;
    height:40vw;
-   width:28vw;
+   width:31vw;
    overflow: hidden;
-   margin:16px;
+   margin:10px;
 }
 
 .image-div .overlay{
@@ -220,7 +222,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center; 
-    padding: 20px; 
+    padding: 15px; 
     z-index: 9;
     transition: all ease 0.5s;
 }
